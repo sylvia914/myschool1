@@ -1,0 +1,29 @@
+<div class="in">
+  <h2>添加新教师</h2>
+  <label>教师编号:</label> <input #teacherNo />*<br>
+  <label>教师姓名:</label> <input #teacherName />*<br>
+  <label>当前职称:</label>
+  <select [(ngModel)]="title"><!--ngValue支持对象，value仅支持字符串-->
+    <option *ngFor="let title of titles" [ngValue]="title">{{title.description}}</option>
+  </select><br>
+  <label>最高学位:</label>
+  <select [(ngModel)]="degree"><!--ngValue支持对象，value仅支持字符串-->
+    <option *ngFor="let degree of degrees" [ngValue]="degree">{{degree.description}}</option>
+  </select><br>
+  <label>所属学院:</label>
+  <select [(ngModel)]="school" (change)=" getDepSch(school.id)" ><!--ngValue支持对象，value仅支持字符串-->
+    <option *ngFor="let school of schools" [ngValue]="school">{{school.description}}</option>
+  </select><br>
+  <label>所属专业:</label>
+  <select [(ngModel)]="department"><!--ngValue支持对象，value仅支持字符串-->
+    <option *ngFor="let department of departments" [ngValue]="department">{{department.description}}</option>
+  </select><br>
+  <div>
+    <input type="file" (change)="uploadFile($event)" name="value" value="测试上传单个文件"/>
+  </div>
+
+</div>
+<button (click)="goBack()">返回</button>
+<button (click)="save(teacherName.value,teacherNo.value)">保存</button>
+
+

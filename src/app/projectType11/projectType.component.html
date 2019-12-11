@@ -1,0 +1,13 @@
+<a routerLink="/index/addPT"><button > 添加类型</button></a>
+<table class="tablelist">
+  <tr><th>序号</th><th>编号</th><th>类型名称</th><th>备注</th><th>操作</th></tr>
+  <tr *ngFor="let projectType of projectTypes;let i=index" class="badge">
+    <td>{{i+1}}</td>
+    <td>{{projectType.no}}</td>
+    <td>{{projectType.description}}</td>
+    <td>{{projectType.remarks}}</td>
+    <td> <a routerLink="/index/updatePT/{{projectType.id}}"><button>修改</button></a>
+      <button (click)="delete(projectType)">删除</button></td>
+  </tr>
+</table>
+

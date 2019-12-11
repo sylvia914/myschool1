@@ -1,0 +1,13 @@
+<a routerLink="/index/addDep"><button > 添加专业</button></a>
+<table class="tablelist">
+  <tr><th>序号</th><th>编号</th><th>专业名称</th><th>所属学院</th><th>备注</th><th>操作</th></tr>
+  <tr *ngFor="let department of dataShow; let i=index;" class="badge">
+    <td>{{i+1+(currentPag-1)*pagNums}}</td>
+    <td>{{department.no}}</td>
+    <td>{{department.description}}</td>
+    <td><label *ngIf="department.school"> {{department.school.description}}</label></td>
+    <td>{{department.remarks}}</td>
+    <td> <a routerLink="/index/updateDep/{{department.id}}"><button>修改</button></a><button (click)="delete(department)">删除</button></td>
+  </tr><!-- [leng]="leng"用于往子组件传递变量数据，可以是对象。-->
+  <tr><td colspan="6"> <app-paging  [leng]="leng" (currentPag)="currentPagHandel($event)" (pagNums)="pagNumsHandel($event)"> </app-paging></td></tr>
+</table>

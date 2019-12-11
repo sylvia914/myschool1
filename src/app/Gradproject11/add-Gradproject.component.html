@@ -1,0 +1,31 @@
+<div class="in">
+  <h2>添加毕设课题</h2>
+  <label>题目序号:</label><br>
+  <input #gradProjectNo />*<br>
+  <label>题目名称:</label><br>
+  <input #gradProjectName />*<br>
+  <label>出题老师:</label><br>
+  <select [(ngModel)]="teacher"><!--ngValue支持对象，value仅支持字符串-->
+    <option *ngFor="let teacher of teachers" [ngValue]="teacher">{{teacher.name}}</option>
+  </select><br>
+  <label>毕设种类:</label><br>
+  <select [(ngModel)]="projectCategory"><!--ngValue支持对象，value仅支持字符串-->
+    <option *ngFor="let projectCategory of projectCategorys" [ngValue]="projectCategory">{{projectCategory.description}}</option>
+  </select><br>
+  <label>题目类型:</label><br>
+  <select [(ngModel)]="projectType"><!--ngValue支持对象，value仅支持字符串-->
+    <option *ngFor="let projectType of projectTypes" [ngValue]="projectType">{{projectType.description}}</option>
+  </select><br>
+  <label>当前状态:</label><br>
+  <select [(ngModel)]="projectStatus"><!--ngValue支持对象，value仅支持字符串-->
+    <option *ngFor="let projectStatus of projectStatuss" [ngValue]="projectStatus">{{projectStatus.description}}</option>
+  </select><br>
+  <div>
+    <input type="file" (change)="uploadFile($event)" name="value" value="测试上传单个文件"/>
+  </div>
+
+</div>
+<button (click)="goBack()">返回</button>
+<button (click)="save(gradProjectName.value,gradProjectNo.value)">保存</button>
+
+

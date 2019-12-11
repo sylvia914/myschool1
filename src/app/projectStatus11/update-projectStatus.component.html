@@ -1,0 +1,10 @@
+<div *ngIf="projectStatus" class="in">
+  <h2>毕设状态信息修改</h2><br>
+  <div>
+    <label>状态编号: </label> <input [(ngModel)]="projectStatus.no" /><br>
+    <label>状态名称: </label> <input [(ngModel)]="projectStatus.description"/><br>
+    <label>备 注: </label> <textarea [(ngModel)]="projectStatus.remarks" ></textarea>
+  </div>
+  <button (click)="goBack()">返回</button>
+  <button (click)="save()">保存</button>
+</div>

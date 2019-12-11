@@ -1,0 +1,13 @@
+<a routerLink="/index/addPS"><button > 添加毕设状态</button></a>
+<table class="tablelist">
+  <tr><th>序号</th><th>编号</th><th>状态名称</th><th>备注</th><th>操作</th></tr>
+  <tr *ngFor="let projectStatus of projectStatuss;let i=index" class="badge">
+    <td>{{i+1}}</td>
+    <td>{{projectStatus.no}}</td>
+    <td>{{projectStatus.description}}</td>
+    <td>{{projectStatus.remarks}}</td>
+    <td> <a routerLink="/index/updatePS/{{projectStatus.id}}"><button>修改</button></a>
+      <button (click)="delete(projectStatus)">删除</button></td>
+  </tr>
+</table>
+

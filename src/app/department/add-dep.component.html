@@ -1,0 +1,13 @@
+<div class="in">
+  <h2>添加新专业</h2>
+  <label>专业编号:</label> <input #depNo />*<br>
+  <label>专业名称:</label> <input #depName />*<br>
+  <label>所属学院:</label>
+  <select [(ngModel)]="school"><!--ngValue支持对象，value仅支持字符串-->
+    <option *ngFor="let school of colleges" [ngValue]="school">{{school.description}}</option>
+  </select>*<br>
+  <label class="remark">备注:</label> <textarea #depRemarks></textarea>
+</div>
+<button (click)="goBack()">返回</button>
+<button (click)="save(depName.value,depNo.value,depRemarks.value)">保存</button>
+

@@ -1,0 +1,12 @@
+<a routerLink="/index/addProftitle"><button > 添加职称</button></a>
+<table class="tablelist">
+  <tr><th>序号</th><th>编号</th><th>职称名称</th><th>备注</th><th>操作</th></tr>
+  <tr *ngFor="let proftitle of proftitles;let i=index" class="badge">
+    <td>{{i+1}}</td>
+    <td>{{proftitle.no}}</td>
+    <td>{{proftitle.description}}</td>
+    <td>{{proftitle.remarks}}</td>
+    <td> <a routerLink="/index/updateProftitle/{{proftitle.id}}"><button>修改</button></a>
+      <button (click)="delete(proftitle)">删除</button></td>
+  </tr>
+</table>

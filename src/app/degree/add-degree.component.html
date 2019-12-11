@@ -1,0 +1,10 @@
+<h2>添加新学位</h2>
+<div>
+  <span>请输入以下信息： </span><br>
+  <label>学位编号:</label> <input #degreeNo />*<br>
+  <label>学位名称:</label> <input #degreeName />*<br>
+  <label class="remark">备注:</label> <textarea #degreeRemarks></textarea>
+</div>
+<button (click)="goBack()">返回</button>
+<button (click)="save(degreeName.value,degreeNo.value,degreeRemarks.value)">保存</button>
+

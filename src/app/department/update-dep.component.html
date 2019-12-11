@@ -1,0 +1,13 @@
+<div *ngIf="department" class="in">
+  <h2>修改专业</h2>
+  <label>专业编号:</label> <input  [(ngModel)]="department.no" /><br>
+  <label>专业名称:</label> <input [(ngModel)]="department.description" /><br>
+  <label>所属学院:</label>  <!--   ngModel用于将文本框与变量进行双向绑定。ngValue支持对象，value仅支持字符串-->
+  <select [(ngModel)]="department.school" [compareWith]="compareFn">
+    <option *ngFor="let school of colleges" [ngValue]="school">{{school.description}}</option>
+  </select><br>
+  <label class="remark">备 注:</label> <textarea [(ngModel)]="department.remarks" ></textarea>
+</div>
+<button (click)="goBack()">返回</button>
+<button (click)="save()">保存</button>
+

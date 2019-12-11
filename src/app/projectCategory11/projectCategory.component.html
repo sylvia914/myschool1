@@ -1,0 +1,13 @@
+<a routerLink="/index/addPC"><button > 添加毕设类型</button></a>
+<table class="tablelist">
+  <tr><th>序号</th><th>编号</th><th>类型名称</th><th>备注</th><th>操作</th></tr>
+  <tr *ngFor="let projectCategory of projectGategorys;let i=index" class="badge">
+    <td>{{i+1}}</td>
+    <td>{{projectCategory.no}}</td>
+    <td>{{projectCategory.description}}</td>
+    <td>{{projectCategory.remarks}}</td>
+    <td> <a routerLink="/index/updatePC/{{projectCategory.id}}"><button>修改</button></a>
+      <button (click)="delete(projectCategory)">删除</button></td>
+  </tr>
+</table>
+

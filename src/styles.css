@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+/* schoolesComponent's private CSS styles */
+.tablelist{ width:90%; border:0; margin-top:5px; }
+.tablelist tr th{
+  background-color:#405061;
+  line-height:30px;
+  color: #ffffee;
+}
+.tablelist .badge{
+  background-color:#eef;
+  line-height:30px;
+  color:#000;
+  text-align: center;
+}
+.tablelist .badge:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+.tablelist td {
+}
+
+.tablelist a {
+  color: #333;
+  text-decoration: none;
+}
+.tablelist a:hover {
+  color:#607D8B;
+}
+button {
+  background-color: gray ;
+  color: white;
+  border: none;
+  padding: 5px 5px;
+  border-radius:3px;
+  margin-right: 10px;
+  cursor:hand;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+input,textarea,select{
+  width:900px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 3px;
+  background-color: #eeeeff;
+  margin-bottom: 10px;
+}
+textarea{margin-top: 10px;}
+.remark{display:inline-block; padding-bottom:50px; width:70px}

@@ -1,0 +1,10 @@
+<div *ngIf="college" class="in">
+  <h2>学院信息修改</h2><br>
+  <div>
+    <label>学院编号: </label> <input [(ngModel)]="college.no" /><br>
+    <label>学院名称: </label> <input [(ngModel)]="college.description"/><br>
+    <label>备 注: </label> <textarea [(ngModel)]="college.remarks" ></textarea>
+  </div>
+  <button (click)="goBack()">返回</button>
+  <button (click)="save()">保存</button>
+</div>

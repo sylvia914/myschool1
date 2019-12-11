@@ -1,0 +1,13 @@
+<a routerLink="/index/addDegree"><button > 添加学位</button></a>
+<table class="tablelist">
+  <tr><th>序号</th><th>编号</th><th>学位名称</th><th>备注</th><th>操作</th></tr>
+  <tr *ngFor="let degree of degrees;let i=index" class="badge">
+    <td>{{i+1}}</td>
+    <td>{{degree.no}}</td>
+    <td>{{degree.description}}</td>
+    <td>{{degree.remarks}}</td>
+    <td> <a routerLink="/index/updateDegree/{{degree.id}}"><button>修改</button></a>
+      <button (click)="delete(degree)">删除</button></td>
+  </tr>
+</table>
+

@@ -1,0 +1,10 @@
+<div *ngIf="projectGategory" class="in">
+  <h2>种类信息修改</h2><br>
+  <div>
+    <label>种类编号: </label> <input [(ngModel)]="projectGategory.no" /><br>
+    <label>种类名称: </label> <input [(ngModel)]="projectGategory.description"/><br>
+    <label>备 注: </label> <textarea [(ngModel)]="projectGategory.remarks" ></textarea>
+  </div>
+  <button (click)="goBack()">返回</button>
+  <button (click)="save()">保存</button>
+</div>

@@ -1,0 +1,10 @@
+<h2>添加毕设状态</h2>
+<div>
+  <span>请输入以下信息： </span><br>
+  <label>状态编号:</label> <input #projectStatusNo />*<br>
+  <label>状态名称:</label> <input #projectStatusName />*<br>
+  <label class="remark">备注:</label> <textarea #projectStatusRemarks></textarea>
+</div>
+<button (click)="goBack()">返回</button>
+<button (click)="save(projectStatusName.value,projectStatusNo.value,projectStatusRemarks.value)">保存</button>
+

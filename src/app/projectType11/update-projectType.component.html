@@ -1,0 +1,10 @@
+<div *ngIf="projectType" class="in">
+  <h2>类型信息修改</h2><br>
+  <div>
+    <label>类型编号: </label> <input [(ngModel)]="projectType.no" /><br>
+    <label>类型名称: </label> <input [(ngModel)]="projectType.description"/><br>
+    <label>备 注: </label> <textarea [(ngModel)]="projectType.remarks" ></textarea>
+  </div>
+  <button (click)="goBack()">返回</button>
+  <button (click)="save()">保存</button>
+</div>

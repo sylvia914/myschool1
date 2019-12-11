@@ -1,0 +1,13 @@
+<a routerLink="/index/addCollege"><button > 添加学院</button></a>
+<table class="tablelist">
+  <tr><th>序号</th><th>编号</th><th>学院名称</th><th>备注</th><th>操作</th></tr>
+  <tr *ngFor="let college of dataShow" class="badge">
+    <td>{{college.id}}</td>
+    <td>{{college.no}}</td>
+    <td>{{college.description}}</td>
+    <td>{{college.remarks}}</td>
+    <td> <a routerLink="/index/updateCollege/{{college.id}}"><button>修改</button></a>
+      <button (click)="delete(college)">删除</button></td>
+  </tr><!-- [leng]="leng"用于往子组件传递变量数据，可以是对象。-->
+  <tr><td colspan="5"> <app-paging  [leng]="leng" (currentPag)="currentPagHandel($event)" (pagNums)="pagNumsHandel($event)"> </app-paging></td></tr>
+</table>

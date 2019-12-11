@@ -1,0 +1,10 @@
+<div *ngIf="proftitle" class="in">
+  <h2>职称信息修改</h2><br>
+  <div>
+    <label>职称编号: </label> <input [(ngModel)]="proftitle.no" /><br>
+    <label>职称名称: </label> <input [(ngModel)]="proftitle.description"/><br>
+    <label>备 注: </label> <textarea [(ngModel)]="proftitle.remarks" ></textarea>
+  </div>
+  <button (click)="goBack()">返回</button>
+  <button (click)="save()">保存</button>
+</div>

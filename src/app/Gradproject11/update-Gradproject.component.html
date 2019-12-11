@@ -1,0 +1,25 @@
+<div *ngIf="gradProject" class="in">
+  <h2>修改毕业设计题目</h2>
+  <label>题目名称:</label><br>
+  <input [(ngModel)]=gradProject.title /><br>
+  <label>出题老师:</label><br>
+  <select [(ngModel)]="gradProject.teacher" [compareWith]="compareFn"><!--ngValue支持对象，value仅支持字符串-->
+    <option *ngFor="let teacher of teachers" [ngValue]="teacher">{{teacher.name}}</option>
+  </select><br>
+  <label>毕设种类:</label><br>
+  <select [(ngModel)]="gradProject.graduateProjectCategory" [compareWith]="compareFn">
+    <option *ngFor="let projectCategory of projectCategorys" [ngValue]="projectCategory">{{projectCategory.description}}</option>
+  </select><br>
+  <label>毕设类型:</label><br>
+  <select [(ngModel)]="gradProject.graduateProjectType" [compareWith]="compareFn" >
+    <option *ngFor="let projectType of projectTypes" [ngValue]="projectType">{{projectType.description}}</option>
+  </select><br>
+  <label>状态:</label><br>
+  <select [(ngModel)]="gradProject.graduateProjectStatus" [compareWith]="compareFn">
+    <option *ngFor="let projectStatus of projectStatuss" [ngValue]="projectStatus">{{projectStatus.description}}</option>
+  </select><br>
+</div>
+<button (click)="goBack()">返回</button>
+<button (click)="save()">保存</button>
+
+

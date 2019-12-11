@@ -1,0 +1,10 @@
+<div *ngIf="degree" class="in">
+  <h2>学位信息修改</h2><br>
+  <div>
+    <label>学位编号: </label> <input [(ngModel)]="degree.no" /><br>
+    <label>学位名称: </label> <input [(ngModel)]="degree.description"/><br>
+    <label>备 注: </label> <textarea [(ngModel)]="degree.remarks" ></textarea>
+  </div>
+  <button (click)="goBack()">返回</button>
+  <button (click)="save()">保存</button>
+</div>

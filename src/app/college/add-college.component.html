@@ -1,0 +1,10 @@
+<h2>添加新学院</h2>
+<div class="in">
+  <span>请输入以下信息： </span><br>
+  <label>学院编号:</label> <input #collegeNo />*<br>
+  <label>学院名称:</label> <input #collegeName />*<br>
+  <label class="remark">备注:</label> <textarea #collegeRemarks></textarea>
+</div>
+<button (click)="goBack()">返回</button>
+<button (click)="save(collegeName.value,collegeNo.value,collegeRemarks.value)">保存</button>
+

@@ -1,0 +1,17 @@
+<header>
+  <h1>毕业设计管理系统demo</h1>
+  <span style="display:block; text-align: right; width:100%;">欢迎：{{user}}
+    <a routerLink='/' style="margin:20px">退出</a></span>
+</header>
+<nav>
+    <a routerLink='/index/college' >院系管理</a>
+    <a routerLink='/index/department' >专业管理</a>
+    <a routerLink='/index/degree'>学位管理</a>
+    <a routerLink='/index/profTitle'>职称管理</a>
+    <a routerLink='/index/teacher'>教师管理</a>
+  <a routerLink='/index/GP' >课题管理</a>
+  <a routerLink='/index/PC'>毕设种类管理</a>
+  <a routerLink='/index/PS'>毕设状态管理</a>
+  <a routerLink='/index/PT'>毕业类型管理</a>
+</nav>
+<section><router-outlet></router-outlet></section>

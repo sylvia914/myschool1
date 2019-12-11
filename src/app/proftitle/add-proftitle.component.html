@@ -1,0 +1,10 @@
+<h2>添加新职称</h2>
+<div class="in">
+  <span>请输入以下信息： </span><br>
+  <label>职称编号:</label> <input #proftitleNo />*<br>
+  <label>职称名称:</label> <input #proftitleName />*<br>
+  <label class="remark">备注:</label> <textarea #proftitleRemarks></textarea>
+</div>
+<button (click)="goBack()">返回</button>
+<button (click)="save(proftitleName.value,proftitleNo.value,proftitleRemarks.value)">保存</button>
+

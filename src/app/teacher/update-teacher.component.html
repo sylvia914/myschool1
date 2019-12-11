@@ -1,0 +1,25 @@
+<div *ngIf="teacher" class="in">
+  <h2>修改教师</h2>
+  <label>教师编号:</label> <input [(ngModel)]=teacher.no /><br>
+  <label>教师姓名:</label> <input [(ngModel)]=teacher.name /><br>
+  <label>当前职称:</label>
+  <select [(ngModel)]="teacher.title" [compareWith]="compareFn"><!--ngValue支持对象，value仅支持字符串-->
+    <option *ngFor="let title of titles" [ngValue]="title">{{title.description}}</option>
+  </select><br>
+  <label>最高学位:</label>
+  <select [(ngModel)]="teacher.degree" [compareWith]="compareFn">
+    <option *ngFor="let degree of degrees" [ngValue]="degree">{{degree.description}}</option>
+  </select><br>
+  <label>所属学院:</label>
+  <select [(ngModel)]="teacher.department.school" [compareWith]="compareFn" (change)="getDepSch(teacher.department.school.id)">
+    <option *ngFor="let school of schools" [ngValue]="school">{{school.description}}</option>
+  </select>
+  <label>所属专业:</label>
+  <select [(ngModel)]="teacher.department" [compareWith]="compareFn">
+    <option *ngFor="let department of departments" [ngValue]="department">{{department.description}}</option>
+  </select>
+</div>
+<button (click)="goBack()">返回</button>
+<button (click)="save()">保存</button>
+
+

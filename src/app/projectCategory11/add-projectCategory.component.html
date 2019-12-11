@@ -1,0 +1,10 @@
+<h2>添加毕设类型</h2>
+<div>
+  <span>请输入以下信息： </span><br>
+  <label>类型编号:</label> <input #projectGategoryNo />*<br>
+  <label>类型名称:</label> <input #projectGategoryName />*<br>
+  <label class="remark">备注:</label> <textarea #projectGategoryRemarks></textarea>
+</div>
+<button (click)="goBack()">返回</button>
+<button (click)="save(projectGategoryName.value,projectGategoryNo.value,projectGategoryRemarks.value)">保存</button>
+

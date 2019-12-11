@@ -1,0 +1,14 @@
+<a routerLink="/index/addGP"><button > 添加老师</button></a>
+<table class="tablelist">
+  <tr><th>序号</th><th>题目名称</th><th>出题老师</th><th>毕设种类</th><th>题目类型</th><th>当前状态</th><th>操作</th></tr>
+  <tr *ngFor="let gradProject of dataShow;let i=index" class="badge">
+    <td>{{gradProject.id}}</td>
+    <td>{{gradProject.title}}</td>
+    <td><label *ngIf="gradProject.teacher"> {{gradProject.teacher.name}}</label></td>
+    <td><label *ngIf="gradProject.graduateProjectCategory"> {{gradProject.graduateProjectCategory.description}}</label></td>
+    <td><label *ngIf="gradProject.graduateProjectType"> {{gradProject.graduateProjectType.description}}</label></td>
+    <td><label *ngIf="gradProject.graduateProjectStatus"> {{gradProject.graduateProjectStatus.description}}</label></td>
+    <td> <a routerLink="/index/updateGP/{{gradProject.id}}"><button>修改</button></a><button (click)="delete(gradProject)">删除</button></td>
+  </tr><!-- [leng]="leng"用于往子组件传递变量数据，可以是对象。-->
+  <tr><td colspan="8"> <app-paging  [leng]="leng" (currentPag)="currentPagHandel($event)" (pagNums)="pagNumsHandel($event)"> </app-paging></td></tr>
+</table>

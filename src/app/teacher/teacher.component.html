@@ -1,0 +1,14 @@
+<a routerLink="/index/addTeacher"><button > 添加老师</button></a>
+<table class="tablelist">
+  <tr><th>序号</th><th>编号</th><th>教师姓名</th><th>职称</th><th>最高学位</th><th>所在专业</th><th>操作</th></tr>
+  <tr *ngFor="let teacher of dataShow" class="badge">
+    <td>{{teacher.id}}</td>
+    <td>{{teacher.no}}</td>
+    <td>{{teacher.name}}</td>
+    <td><label *ngIf="teacher.title"> {{teacher.title.description}}</label></td>
+    <td><label *ngIf="teacher.degree"> {{teacher.degree.description}}</label></td>
+    <td><label *ngIf="teacher.department"> {{teacher.department.description}}</label></td>
+    <td> <a routerLink="/index/updateTeacher/{{teacher.id}}"><button>修改</button></a><button (click)="delete(teacher)">删除</button></td>
+  <tr><td colspan="7"> <app-paging  [leng]="leng" (currentPag)="currentPagHandel($event)" (pagNums)="pagNumsHandel($event)"> </app-paging></td></tr>
+</table>
+
